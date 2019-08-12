@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * This file is used to write hooks that used in the module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function custom_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+
+  if ($form_id == 'system_site_information_settings') {
+    $form['actions']['submit']['#value'] = 'Update configuration';
+  }
+}
